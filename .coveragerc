@@ -5,6 +5,7 @@ source =
 
 [run]
 branch = true
+parallel = true
 source =
     uwsgicache
     tests
