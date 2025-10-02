@@ -67,7 +67,7 @@ if uwsgi:
 
         def delete(self, key, version=None):
             key = self.make_and_validate_key(key, version=version)
-            self._cache.cache_del(key, self._server)
+            return self._cache.cache_del(key, self._server)
 
         def close(self, **kwargs):
             pass

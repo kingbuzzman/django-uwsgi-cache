@@ -1,5 +1,6 @@
 import os
 
+USE_TZ = True
 SECRET_KEY = "+ln!mmswhbemdn@*v8sbic_n+i&j4+ct8(n=y09s81c)7fyyf2"  # noqa:S105
 DEBUG = TEMPLATE_DEBUG = False
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]

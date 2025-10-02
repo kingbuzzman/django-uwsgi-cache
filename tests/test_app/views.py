@@ -32,6 +32,12 @@ def add(request, key, value):
     return HttpResponse(result)
 
 
+def delete(request, key, value):
+    result = cache.delete(key)
+    print(f"test_app:delete:{key}")
+    return HttpResponse(result)
+
+
 def clear(request):
     cache.clear()
     print("test_app:clear")
