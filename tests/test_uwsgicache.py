@@ -11,6 +11,7 @@ TIMEOUT = int(os.getenv("UWSGICACHE_TEST_TIMEOUT", 3))
 
 
 def assertions(url):
+    assert httpx.get(url + "/delete/1").text == "None"
     assert httpx.get(url + "/get/1").text == "None"
     assert httpx.get(url + "/set/1/a").text == "ok"
     assert httpx.get(url + "/get/1").text == "a"
@@ -40,6 +41,7 @@ def assertions(url):
     assert httpx.get(url + "/add/8/h?timeout=None").text == "True"
     time.sleep(2)  # 2 * cache-expire-freq
     assert httpx.get(url + "/get/8").text == "h"
+    assert httpx.get(url + "/get/8").text == "True"
 
 
 def test_uwsgi():
